@@ -5,7 +5,6 @@ import java.util.List;
 public class IntegerListResource {
     private final List<Integer> list;
 
-
     public IntegerListResource(List<Integer> list) {
         this.list = list;
     }

@@ -11,14 +11,16 @@ import java.util.List;
 public class IntegerListController {
 
     IntegerListSorter integerListSorter = new IntegerListSorter();
+    IntegerListSum integerListSum = new IntegerListSum();
 
     @GetMapping("/")
     public String defaultRoute() {
         return "Hello World, Spring Boot Demo Running";
     }
     @PostMapping("/sort")
-    public IntegerListResource sort(@RequestBody IntegerListResource integerList) {
+    public SortedListResponse sort(@RequestBody IntegerListResource integerList) {
         List<Integer> sortedIntegerList = integerListSorter.sortIntegerList(integerList.getList());
-        return new IntegerListResource(sortedIntegerList);
+        int summation = integerListSum.sum(sortedIntegerList);
+        return new SortedListResponse(sortedIntegerList,summation);
     }
 }
