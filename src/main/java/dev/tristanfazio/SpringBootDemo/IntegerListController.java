@@ -19,7 +19,7 @@ public class IntegerListController {
     }
     @PostMapping("/sort")
     public SortedListResponse sort(@RequestBody IntegerListRequest integerList) {
-        List<Integer> sortedIntegerList = integerListSorter.sortIntegerList(integerList.getList());
+        int[] sortedIntegerList = integerListSorter.sortIntegerList(integerList.getList());
         int summation = integerListSum.sum(sortedIntegerList);
         return new SortedListResponse(sortedIntegerList,summation);
     }

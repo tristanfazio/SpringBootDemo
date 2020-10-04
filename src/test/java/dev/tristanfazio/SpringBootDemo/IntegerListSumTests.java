@@ -10,9 +10,9 @@ import java.util.List;
 @SpringBootTest
 public class IntegerListSumTests {
 
-    List<Integer> list = Arrays.asList(
+    int[] list = {
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-    );
+    };
 
     IntegerListSum integerListSum = new IntegerListSum();
 

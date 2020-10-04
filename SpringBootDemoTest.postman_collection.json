@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "2372aa28-462d-4afe-8f89-52310b6951a0",
+		"name": "SpringBootDemoTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sorted Array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4cd6617e-854e-4635-ac76-c19c4f71228a",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Array to be Sorted\", function () {\r",
+							"    for (var i = 0; i < jsonData.sortedList.length; i++) {\r",
+							"        pm.expect(jsonData.sortedList[i]).equals(i+1);\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Summation to be accurate\", function() {\r",
+							"    pm.expect(jsonData.listSummation).equals(55);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"list\": [\r\n        1,\r\n        2,\r\n        3,\r\n        4,\r\n        5,\r\n        6,\r\n        7,\r\n        8,\r\n        9,\r\n        10\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/sort",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sort"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UnSorted Array",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4cd6617e-854e-4635-ac76-c19c4f71228a",
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Array to be Sorted\", function () {\r",
+							"    for (var i = 0; i < jsonData.sortedList.length; i++) {\r",
+							"        pm.expect(jsonData.sortedList[i]).equals(i+1);\r",
+							"    }\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Summation to be accurate\", function() {\r",
+							"    pm.expect(jsonData.listSummation).equals(55);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"list\": [\r\n        1,\r\n        6,\r\n        5,\r\n        4,\r\n        7,\r\n        2,\r\n        9,\r\n        3,\r\n        10,\r\n        8\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/sort",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sort"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

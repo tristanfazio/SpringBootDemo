@@ -1,25 +1,24 @@
 package dev.tristanfazio.SpringBootDemo;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class IntegerListSorter {
   public IntegerListSorter(){};
 
-  public List<Integer> sortIntegerList(List<Integer> unsortedList) {
-    Integer[] listArray = unsortedList.toArray(Integer[]::new);
+  public int[] sortIntegerList(int[] unsortedList) {
+    mergeSort(unsortedList, unsortedList.length);
 
-    mergeSort(listArray, listArray.length);
-
-    return Arrays.asList(listArray);
+    return unsortedList;
   }
 
-  private static void mergeSort(Integer[] unsortedArray, int arraySize) {
+  private static void mergeSort(int[] unsortedArray, int arraySize) {
     if(arraySize<2) {return;}
 
     int middle = arraySize/2;
-    Integer[] left = new Integer[middle];
-    Integer[] right = new Integer[arraySize-middle];
+    int[] left = new int[middle];
+    int[] right = new int[arraySize-middle];
 
     for (int i = 0; i < middle; i++) {
       left[i] = unsortedArray[i];
@@ -34,7 +33,7 @@ public class IntegerListSorter {
     merge(unsortedArray,left,right,middle,arraySize-middle);
   }
 
-  private static void merge(Integer[] unsortedArray, Integer[] left, Integer[] right, int middle, int offest) {
+  private static void merge(int[] unsortedArray, int[] left, int[] right, int middle, int offest) {
     int i = 0, j = 0, k = 0;
     while (i < middle && j < offest) {
       if (left[i] <= right[j]) {

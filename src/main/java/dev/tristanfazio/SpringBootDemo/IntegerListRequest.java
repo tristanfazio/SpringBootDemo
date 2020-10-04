@@ -3,13 +3,18 @@ package dev.tristanfazio.SpringBootDemo;
 import java.util.List;
 
 public class IntegerListRequest {
-    private final List<Integer> list;
 
-    public IntegerListRequest(List<Integer> list) {
+    private final int[] list;
+
+    public IntegerListRequest() {
+
+        list = new int[0];
+    }
+    public IntegerListRequest(int[] list) {
         this.list = list;
     }
 
-    public List<Integer> getList() {
+    public int[] getList() {
         return list;
     }
 }

@@ -3,15 +3,15 @@ package dev.tristanfazio.SpringBootDemo;
 import java.util.List;
 
 public class SortedListResponse {
-    List<Integer> sortedList;
+    int[] sortedList;
     int listSummation;
 
-    public SortedListResponse(List<Integer> sortedList, int listSummation) {
+    public SortedListResponse(int[] sortedList, int listSummation) {
         this.sortedList = sortedList;
         this.listSummation = listSummation;
     }
 
-    public List<Integer> getSortedList() {
+    public int[] getSortedList() {
         return sortedList;
     }
 
