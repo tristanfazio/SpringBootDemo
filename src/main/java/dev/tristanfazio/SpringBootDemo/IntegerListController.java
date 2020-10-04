@@ -1,0 +1,24 @@
+package dev.tristanfazio.SpringBootDemo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class IntegerListController {
+
+    IntegerListSorter integerListSorter = new IntegerListSorter();
+
+    @GetMapping("/")
+    public String defaultRoute() {
+        return "Hello World, Spring Boot Demo Running";
+    }
+    @PostMapping("/sort")
+    public IntegerListResource sort(@RequestBody IntegerListResource integerList) {
+        List<Integer> sortedIntegerList = integerListSorter.sortIntegerList(integerList.getList());
+        return new IntegerListResource(sortedIntegerList);
+    }
+}
