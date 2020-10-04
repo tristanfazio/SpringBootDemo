@@ -20,7 +20,7 @@ public class IntegerListSorterTests {
     IntegerListSorter integerListSorter = new IntegerListSorter();
 
     @Test
-    void givenAnUnsortedList_whenPassedToSorted_ThenSortedListIsReturned() {
+    void givenAnUnsortedList_whenPassedToSorter_ThenSortedListIsReturned() {
         List<Integer> actualSortedList = integerListSorter.sortIntegerList(unSortedList);
         assertEquals(sortedList,actualSortedList);
     }
