@@ -22,6 +22,6 @@ public class IntegerListSorterTests {
     @Test
     void givenAnUnsortedList_whenPassedToSorter_ThenSortedListIsReturned() {
         int[] actualSortedList = integerListSorter.sortIntegerList(unSortedList);
-        assertEquals(sortedList,actualSortedList);
+        assertArrayEquals(sortedList,actualSortedList);
     }
 }
