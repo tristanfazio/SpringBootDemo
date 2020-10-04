@@ -18,7 +18,7 @@ public class IntegerListController {
         return "Hello World, Spring Boot Demo Running";
     }
     @PostMapping("/sort")
-    public SortedListResponse sort(@RequestBody IntegerListResource integerList) {
+    public SortedListResponse sort(@RequestBody IntegerListRequest integerList) {
         List<Integer> sortedIntegerList = integerListSorter.sortIntegerList(integerList.getList());
         int summation = integerListSum.sum(sortedIntegerList);
         return new SortedListResponse(sortedIntegerList,summation);

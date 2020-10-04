@@ -2,10 +2,10 @@ package dev.tristanfazio.SpringBootDemo;
 
 import java.util.List;
 
-public class IntegerListResource {
+public class IntegerListRequest {
     private final List<Integer> list;
 
-    public IntegerListResource(List<Integer> list) {
+    public IntegerListRequest(List<Integer> list) {
         this.list = list;
     }
 
