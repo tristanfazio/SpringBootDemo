@@ -20,6 +20,8 @@ Accepts a post request on `localhost:8080/sort`, where the post request contains
 }
 ```
 
+Where `list` is a list of ***Integers***
+
 Which will in turn return a response in the format:
 
 ```
@@ -31,3 +33,4 @@ Which will in turn return a response in the format:
 
 Where `sortedList` is the sorted version of the submitted list, and `listSummation` is the sum of all numbers in the list.
 
+Sorting is implemeted using Merge Sort.
